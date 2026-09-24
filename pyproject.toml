@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "--strict-markers"
+markers = [
+    "integration: requires external services (e.g. the PostgreSQL container)",
+]

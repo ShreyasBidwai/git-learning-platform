@@ -1,0 +1,12 @@
+import pytest
+from sqlalchemy import text
+
+from backend.app.db.session import engine
+
+
+@pytest.mark.integration
+def test_database_connection() -> None:
+    with engine.connect() as connection:
+        result = connection.execute(text("SELECT 1"))
+
+        assert result.scalar() == 1
